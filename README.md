@@ -1,29 +1,26 @@
-# CUSTOMTKINTER IMAGE EDITOR
-👨‍🏫ESSE APLICATIVO OFERECE UMA MANEIRA SIMPLES DE ADICIONAR TEXTOS PERSONALIZADOS ÀS SUAS IMAGENS.
+# IMAGEM EDITOR
+👨‍🏫É UM APLICATIVO PYTHON DE EDIÇÃO EM LOTE QUE ADICIONA TEXTOS PERSONALIZADOS (COR, FUNDO, TAMANHO E POSIÇÃO) A IMAGENS E SALVA OS RESULTADOS EM UMA NOVA PASTA.
 
 <img src="./IMAGENS/FOTO_1.png" align="center" width="500"> <br>
 <img src="./IMAGENS/FOTO_2.png" align="center" width="500"> <br>
+<img src="./IMAGENS/FOTO_3.png" align="center" width="500"> <br>
+<img src="./IMAGENS/FOTO_4.png" align="center" width="500"> <br>
 
 ## DESCRIÇÃO:
-Esse aplicativo é um editor de imagens simples utilizando o `customtkinter` e a biblioteca `PIL` (Pillow) para manipulação de imagens. O objetivo é permitir que o usuário adicione um texto personalizado sobre uma imagem, configure o estilo do texto (como cor, tamanho e posição), e depois salve a imagem modificada.
+Esse é um **aplicativo de edição de imagens em lote** feito em Python, usando `customtkinter` para a interface gráfica e `PIL (Pillow)` para manipulação de imagens. Ele permite adicionar textos sobre imagens com personalização de **cor, fundo, tamanho e posição**, salvando todas as imagens editadas em uma nova pasta. 
 
 ## FUNCIONALIDADES:
-1. **Selecionar Imagem**: O usuário pode selecionar uma imagem do seu computador para editar.
-2. **Inserir Texto**: O usuário pode digitar o texto que deseja adicionar à imagem. O texto pode ser configurado com:
-   - **Cor do texto**: Escolha entre "branco", "vermelho", "verde" ou "azul".
-   - **Cor de fundo do texto**: Escolha entre "branco", "vermelho", "verde" ou "azul".
-   - **Tamanho da fonte**: Escolha entre tamanhos predefinidos de 20px até 200px.
-   - **Posição do texto**: O texto pode ser posicionado no topo, no centro ou na parte inferior da imagem.
-3. **Salvar Imagem**: Após editar a imagem, o usuário pode salvar a imagem com o texto sobreposto em um novo arquivo.
+1. Permite selecionar um **diretório** contendo imagens (`.jpg`, `.jpeg`, `.png`).
+2. Permite adicionar um **texto** que será sobreposto às imagens.
+3. Permite escolher:
 
-## RECURSOS:
-- **Seleção de Imagem**: O código usa o `filedialog.askopenfilename()` para abrir a janela de seleção de arquivo. O arquivo selecionado deve ser uma imagem (extensões `.png`, `.jpg`, `.jpeg`).
-- **Adição de Texto**: O texto é desenhado na imagem usando o `ImageDraw.Draw()`, e a cor e o tamanho da fonte são configuráveis. O código tenta carregar a fonte `arial.ttf` e, caso não a encontre, utiliza a fonte padrão do sistema.
-- **Posição do Texto**: A posição do texto na imagem é determinada pelo valor selecionado (Top, Center, Bottom). O código calcula as coordenadas para centralizar ou posicionar o texto conforme a opção escolhida.
-- **Salvamento de Imagem**: O usuário pode salvar a imagem editada em um novo local usando o `filedialog.asksaveasfilename()`, que oferece a possibilidade de salvar no formato PNG.
-- **Interface Gráfica**: A interface é construída com `customtkinter`, proporcionando uma aparência mais moderna e configurável.
-- **Manipulação de Imagens**: A biblioteca `PIL` é utilizada para abrir, modificar e salvar a imagem.
-- **Feedback ao Usuário**: A interface usa caixas de mensagem (`messagebox`) para dar feedback ao usuário sobre ações como selecionar ou salvar uma imagem, ou quando ocorrem erros.
+   * **Cor do texto** (`WHITE`, `RED`, `GREEN`, `BLUE`)
+   * **Cor do fundo** do texto (retângulo atrás do texto)
+   * **Tamanho da fonte** (20, 40, 60, 80, 100, 150, 200 px)
+   * **Posição do texto** (`TOP`, `CENTER`, `BOTTOM`)
+4. Edita todas as imagens do diretório e cria uma nova pasta chamada `IMAGEM_EDITOR` com os arquivos modificados.
+5. Mostra uma **barra de progresso** indicando quantas imagens foram processadas.
+6. Exibe mensagens de status em tempo real e alerta quando o processo termina.
 
 ## EXECUTANDO ESSE PROJETO:
 1. **Instalação das Dependências::**
@@ -39,29 +36,88 @@ Esse aplicativo é um editor de imagens simples utilizando o `customtkinter` e a
    python CODIGO.py
    ```
 
-3. **Selecionar Imagem**: 
-   - Clique no botão "SELECIONAR" para abrir uma janela de seleção de arquivos e escolher uma imagem.
+2. A interface será aberta em modo escuro.
 
-4. **Digite o Texto**: 
-   - No campo "DIGITE O TEXTO", insira o texto que deseja adicionar à imagem. O texto inicial é "CUSTOMTKINTER".
+3. **Digite o texto** que deseja colocar nas imagens no campo `DIGITE O TEXTO:`.
 
-5. **Configure o Estilo do Texto**:
-   - Selecione a cor do texto desejada.
-   - Escolha a cor do fundo do texto.
-   - Selecione o tamanho da fonte.
-   - Defina a posição do texto (Top, Center, ou Bottom).
+4. **Escolha as opções de estilo do texto**:
 
-6. **Salvar Imagem**: 
-   - Após configurar o texto, clique no botão "SALVAR" para escolher o local onde deseja salvar a imagem editada.
+   * Cor do texto
+   * Cor do fundo do texto
+   * Tamanho da fonte
+   * Posição (topo, centro ou base da imagem)
+
+5. Clique em **DIRETÓRIO** e selecione a pasta com as imagens que deseja editar.
+
+6. Clique em **EDITAR** para iniciar o processo.
+
+7. Acompanhe o progresso na **barra de progresso** e nas mensagens de status.
+
+8. Ao final, todas as imagens editadas estarão em uma subpasta `IMAGEM_EDITOR` dentro do diretório selecionado.
+
+## SOBRE O EXECUTAVEL E O INSTALADOR:
+### 1. EXECUTANDO O INSTALADOR:
+   * O instalador está localizado no diretório `./APP` e está disponível apenas para sistemas **Windows x64**. Para realizar a instalação, basta **dar dois cliques no arquivo** e seguir as instruções exibidas na tela.
+
+### 2. GERANDO O EXECUTAVEL:
+> **IMPORTANTE:** Antes de criar o instalador, é necessário gerar o arquivo `IMAGEM EDITOR.exe`. Para isso, siga os passos abaixo:
+
+   **1. Instalação do PyInstaller:**
+   * Certifique-se de ter o PyInstaller instalado. Se não tiver, instale usando o comando abaixo:
+   ```bash
+   pip install pyinstaller
+   ```
+
+   **2. Gerando o Executável:**
+   * No diretório `./CODIGO`, utilize o comando abaixo para gerar o executável:
+
+   ```bash
+   pyinstaller EXECUTAVEL.spec
+   ```
+
+   * O executável `IMAGEM EDITOR.exe` será criado na pasta `./CODIGO/dist`.
+   * Após a geração, você pode excluir a pasta `./CODIGO/build`.
+
+### 3. GERANDO O INSTALADOR:
+#### PASSO 1: BAIXAR E INSTALAR O INNO SETUP:
+1. **Download**: Baixe o Inno Setup do site oficial: [Inno Setup](http://www.jrsoftware.org/isdl.php).
+2. **Instalação**: Siga o assistente de instalação para instalar o Inno Setup no seu sistema.
+
+#### PASSO 2: CRIAR O INSTALADOR:
+> **IMPORTANTE:** Antes de criar o novo instalador, certifique-se de excluir o arquivo `./APP/IMAGEM EDITOR.exe`.
+
+1. **Editar o arquivo do instalador:**
+   * No diretório `./CODIGO`, abra o arquivo `INSTALADOR.iss` e atualize o seguinte trecho:
+
+   * Localize a diretiva `#define Diretorio` e substitua pelo caminho correto do diretório do projeto. Exemplo:
+
+     ```ini
+     #define Diretorio "C:\Users\HP\Downloads\GITHUB\REPOSITORIO\02-PROJETOS PUBLICOS\02-APLICATIVOS\IMAGEM EDITOR\CODIGO"
+     ```
+
+2. **Gerar o instalador no Inno Setup:**
+   * Abra o arquivo `./CODIGO/INSTALADOR.iss` com o **Inno Setup**.
+   * Clique em **"Compile"** para gerar o instalador.
+
+3. **Limpar arquivos temporários:**
+   * Após a criação do instalador, você pode excluir o executável temporário `./CODIGO/dist/IMAGEM EDITOR.exe`.
+
+4. **Instalando o Aplicativo:**
+   * Se o `Aplicativo` não iniciar automaticamente a instalação, você pode executar manualmente o arquivo `./APP/IMAGEM EDITOR.exe` clicando duas vezes sobre ele.
+   * O assistente de instalação será iniciado e, por padrão, o aplicativo será instalado no seguinte caminho: `C:\Program Files\IMAGEM EDITOR`.
 
 ## NÃO SABE?
-- Entendemos que para manipular arquivos em muitas linguagens, é necessário possuir conhecimento nessas áreas. Para auxiliar nesse aprendizado, oferecemos cursos gratuitos disponíveis:
+- Entendemos que para manipular arquivos em muitas linguagens e tecnologias, é necessário possuir conhecimento nessas áreas. Para auxiliar nesse aprendizado, oferecemos cursos gratuitos e alguns subsídios:
 * [CURSO DE PYTHON](https://github.com/VILHALVA/CURSO-DE-PYTHON)
 * [CURSO DE CUSTOMTKINTER](https://github.com/VILHALVA/CURSO-DE-CUSTOMTKINTER)
 * [CONFIRA MAIS CURSOS](https://github.com/VILHALVA?tab=repositories&q=+topic:CURSO)
+* [DOCUMENTAÇÃO OFICIAL DO PYINSTALLER](https://pyinstaller.org/en/stable/)
+* [DOCUMENTAÇÃO OFICIAL DO INNO SETUP](http://www.jrsoftware.org/isinfo.php)
 
-## CREDITOS:
-- [PROJETO CRIADO PELO VILHALVA](https://github.com/VILHALVA)
+## CREDITOS E MAIS:
+- [PROJETO BASEADO NO "IMAGEM CONVERTER"](https://github.com/VILHALVA/IMAGEM-CONVERTER)
+- [CLIQUE AQUI PARA VER O HISTÓRICO DE ATUALIZAÇÕES](./UPDATES.md)
+
 
 
 
