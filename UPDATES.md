@@ -1,4 +1,4 @@
-# [ATUALIZAÇÕES:](./UPDATES.md#vers%C3%A3o-10---31072024)
+# [ATUALIZAÇÕES:](./UPDATES.md#vers%C3%A3o-10---12122024)
 
 ## VERSÃO 1.1 - 15/08/2025:
 * ✅**Novo nome do app**: Antes chamado `CUSTOMTKINTER IMAGEM EDITOR`, agora é apenas `IMAGEM EDITOR`.
